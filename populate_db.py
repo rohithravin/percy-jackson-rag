@@ -11,8 +11,11 @@ from langchain_community.vectorstores import Chroma
 import gdown
 
 CHROMA_PATH = "./chroma"
-DATA_PATH = "./data/mds"
-PDF_PATH = "./data/pdfs"
+DATA_BASE_PATH = './data'
+DATA_PATH = f"{DATA_BASE_PATH}/mds"
+PDF_PATH = f"{DATA_BASE_PATH}/pdfs"
+ZIP_PATH = f'{DATA_BASE_PATH}/pdfs.zip'
+
 
 def main():
 
@@ -22,11 +25,11 @@ def main():
     args = parser.parse_args()
     if args.reset:
         print("✨ Clearing Database")
-        clear_database()
+        remove_directory()
 
     get_data()
     unzip_file()
-    convert_pdfs_in_directory('./data/pdfs/')
+    convert_pdfs_in_directory(PDF_PATH)
 
     # Create (or update) the data store.
     documents = load_documents()
@@ -49,10 +52,10 @@ def get_data():
     download_url = f'https://drive.google.com/uc?id={file_id}'
     
     # Download the file
-    gdown.download(download_url, './data/pdfs.zip', quiet=False)
-    print(f'Downloaded file to ./data/pdfs.zip')
+    gdown.download(download_url, ZIP_PATH, quiet=False)
+    print(f'Downloaded file to {ZIP_PATH}')
 
-def unzip_file(zip_path = './data/pdfs.zip'):
+def unzip_file(zip_path = ZIP_PATH):
     # Extract the base name of the zip file without the extension
     folder_name = os.path.splitext(os.path.basename(zip_path))[0]
     
@@ -95,7 +98,7 @@ def convert_pdfs_in_directory(directory):
     for filename in os.listdir(directory):
         if filename.endswith('.pdf'):
             pdf_file = os.path.join(directory, filename)
-            md_file = os.path.join('./data/mds/', f'{os.path.splitext(filename)[0]}.md')
+            md_file = os.path.join(DATA_PATH, f'{os.path.splitext(filename)[0]}.md')
             pdf_to_md(pdf_file, md_file)
 
 def load_documents():
@@ -142,7 +145,6 @@ def add_to_chroma(chunks):
     else:
         print("✅ No new documents to add")
 
-
 def calculate_chunk_ids(chunks):
 
     # This will create IDs like "data/monopoly.pdf:6:2"
@@ -171,10 +173,11 @@ def calculate_chunk_ids(chunks):
 
     return chunks
 
-
-def clear_database():
-    if os.path.exists(CHROMA_PATH):
-        shutil.rmtree(CHROMA_PATH)
+def remove_directory():
+    dirs = [DATA_BASE_PATH, CHROMA_PATH, '__pycache__']
+    for dir in dirs:
+        if os.path.exists(dir):
+            shutil.rmtree(dir)
 
 
 if __name__ == "__main__":
