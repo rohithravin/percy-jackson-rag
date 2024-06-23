@@ -29,7 +29,7 @@ conda activate percyjacksonrag
 pip install -r requirements.txt
 ```
 
-We then run `populate_db.py`. This script will download the Percy Jackson books and populate them into our vector engine/db by using embeddings dervied from `nomic-embed-text`. This will take a while.
+We then run `populate_db.py`. This script will download the Percy Jackson books and populate them into our Chroma vector db by using embeddings dervied from `nomic-embed-text`. This will take a while.
 
 ```bash
 python populate_db.py --reset
