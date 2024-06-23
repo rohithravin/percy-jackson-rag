@@ -7,3 +7,4 @@ langchain-community
 gdown
 PyPDF2
 unstructured[md]
+gradio
