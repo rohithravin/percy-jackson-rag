@@ -49,5 +49,4 @@ python run_query.py "Who is the hero of the prophecy?"
 Response: According to the context, Luke is the hero of the prophecy. The prophecy says "A hero's soul, cursed blade shall reap", and it is revealed that the cursed blade refers to the knife Luke gave Annabeth long ago. Additionally, it is stated that by sacrificing himself, Luke had saved Olympus.
 ```
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/d46U_W_QdF4" frameborder="0" allowfullscreen></iframe>
+[![Demo Video](https://img.youtube.com/vi/d46U_W_QdF4/0.jpg)](https://www.youtube.com/watch?v=d46U_W_QdF4)
