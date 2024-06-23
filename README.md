@@ -35,18 +35,12 @@ We then run `populate_db.py`. This script will download the Percy Jackson books 
 python populate_db.py --reset
 ```
 
-Once this is done, everything it set up to run our RAG and ask our LLM questions about the world of Percy Jackson! Here are some examples:
+Once this is done, everything it set up to run our RAG and ask our LLM questions about the world of Percy Jackson! All you have to do is run:
 
+```bash
+python app.py
 ```
-python run_query.py "Where is camp half blood located?"
-Response: Based on the provided context, Camp Half-Blood is located on Long Island. Specifically, it's described as being "bordered by Long Island Sound to the north and rolling hills on the other three sides."
 
-
-python run_query.py "What is the name of the Pegasus Percy rides?"
-Response: According to the provided context, the name of the Pegasus that Percy rides is Blackjack.
-
-python run_query.py "Who is the hero of the prophecy?"
-Response: According to the context, Luke is the hero of the prophecy. The prophecy says "A hero's soul, cursed blade shall reap", and it is revealed that the cursed blade refers to the knife Luke gave Annabeth long ago. Additionally, it is stated that by sacrificing himself, Luke had saved Olympus.
-```
+Below is a demo video! 
 
 [![Demo Video](https://img.youtube.com/vi/d46U_W_QdF4/0.jpg)](https://www.youtube.com/watch?v=d46U_W_QdF4)
