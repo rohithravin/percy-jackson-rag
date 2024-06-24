@@ -20,7 +20,6 @@ ollama serve
 
 These set of commands will download the models we need to run our RAG and to start the ollama server.
 
-
 ## Setting up RAG
 Second, in a separete terminal, we create a conda enviroment and install the required dependencies.
 ```bash
@@ -35,7 +34,7 @@ We then run `populate_db.py`. This script will download the Percy Jackson books 
 python populate_db.py --reset
 ```
 
-Once this is done, everything it set up to run our RAG and ask our LLM questions about the world of Percy Jackson! All you have to do is run:
+Once this is done, everything it set up to run our RAG and ask our LLM questions about the world of Percy Jackson using a demo app created via Gradio! All you have to do is run:
 
 ```bash
 python app.py
