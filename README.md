@@ -1,7 +1,7 @@
 # Building a RAG + LLM using Percy Jackson Books
 
 ## Background
-Recent advancements in artificial intelligence, particularly in language models and retrieval-augmented generation (RAG), have opened new avenues for creating sophisticated applications. This project aims to leverage these technologies to create a powerful question-answering system using the world of Percy Jackson books. The system will use LangChain for orchestration, a Vector Database (Vector DB) for embeddings and retrieval, and the Ollama API with Llama3 for language modeling. Additionally, we will compare the performance and quality of responses and embeddings using two different retrieval mechanisms: ElasticSearch and a Vector Database.
+Recent advancements in artificial intelligence, particularly in language models and retrieval-augmented generation (RAG), have opened new avenues for creating sophisticated applications. This project aims to leverage these technologies to create a powerful question-answering system using the world of Percy Jackson books. The system will use LangChain for orchestration, a Vector Database (Vector DB) for embeddings and retrieval, and the Ollama API with Llama3 for language modeling. At the end I've built a demo app using Gradio to interact with the RAG.
 
 ## Objectives
 - Create a RAG + LLM system that can answer questions based on the content of Percy Jackson books.
